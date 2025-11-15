@@ -9,8 +9,7 @@ export default function BaseLayout() {
     <>
       <Header />
       <HeroSection />
-      <Dashboard />
-      
+      <Dashboard />     
       <Outlet />
     </>
   );
