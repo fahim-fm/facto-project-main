@@ -3,6 +3,7 @@ import Header from "~/components/layout/header";
 
 import Dashboard from "~/components/pages/home/dashboard/dashboard";
 import HeroSection from "~/components/pages/home/hero-section";
+import Trust from "~/components/pages/home/trusted";
 
 export default function BaseLayout() {
   return (
@@ -11,6 +12,7 @@ export default function BaseLayout() {
       <HeroSection />
       <Dashboard />     
       <Outlet />
+      <Trust />
     </>
   );
 }
