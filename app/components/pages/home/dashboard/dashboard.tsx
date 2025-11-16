@@ -343,31 +343,63 @@ const Dashboard: React.FC = () => {
 
               {/* profile card rotated */}
               <div
-                className="
-                  bg-white rounded-[16px] p-4 mt-4 mx-auto flex items-center gap-4
-                  max-w-[360px]
-                  transform rotate-2
-                  2xl:mt-[10px] 2xl:w-[373.23px] 2xl:h-24 2xl:rounded-[25px] 2xl:p-[16px_24px] 2xl:rotate-[6.36deg]
-                "
-              >
-                <div className="w-[56px] h-[56px] rounded-full overflow-hidden border-[6px] border-white">
-                  <img src={Avt} alt="User" className="w-full h-full object-cover rounded-full" />
-                </div>
+  className="
+    bg-white rounded-[16px] p-4 mt-4 mx-auto
+    flex items-center gap-4 w-full max-w-[360px]
+    transform rotate-2
 
-                <div className="flex-1 flex items-center justify-between">
-                  <div>
-                    <div className="text-[18px] font-roboto font-bold text-[#141414]">Online</div>
-                    <div className="text-[14px] font-manrope text-[#686868]">TomyRestaurant</div>
-                  </div>
+    /* Bigger screens */
+    sm:max-w-[380px]
+    md:max-w-[400px]
+    xl:max-w-[420px]
 
-                  <div className="flex flex-col items-end">
-                    <span className="text-[16px] font-roboto font-semibold">+$10K</span>
-                    <div className="mt-2 bg-[#E0F0E5] rounded-full px-3 py-1">
-                      <span className="text-[12px] font-roboto font-semibold text-[#0F4E23]">Confirm</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    /* 2XL Styles */
+    2xl:mt-[10px] 
+    2xl:max-w-[420px]
+    2xl:rounded-[25px]
+    2xl:px-6 2xl:py-4
+    2xl:rotate-[6.36deg]
+  "
+>
+
+  {/* Avatar */}
+  <div className="w-[50px] h-[50px] sm:w-[56px] sm:h-[56px] min-w-[50px] sm:min-w-[56px] rounded-full overflow-hidden border-[5px] sm:border-[6px] border-white">
+    <img
+      src={Avt}
+      alt="User"
+      className="w-full h-full object-cover rounded-full"
+    />
+  </div>
+
+  {/* Text Content */}
+  <div className="flex-1 flex items-center justify-between gap-3">
+
+    {/* Left Side */}
+    <div className="flex flex-col min-w-0">
+      <span className="text-[16px] sm:text-[18px] font-roboto font-bold text-[#141414] truncate">
+        Online
+      </span>
+      <span className="text-[12px] sm:text-[14px] font-manrope text-[#686868] truncate">
+        Tomy Restaurant
+      </span>
+    </div>
+
+    {/* Right Side */}
+    <div className="flex flex-col items-end">
+      <span className="text-[14px] sm:text-[16px] font-roboto font-semibold">
+        +$10K
+      </span>
+
+      <div className="mt-1 sm:mt-2 bg-[#E0F0E5] rounded-full px-2 sm:px-3 py-1">
+        <span className="text-[10px] sm:text-[12px] font-roboto font-semibold text-[#0F4E23]">
+          Confirm
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
             </div>
           </div>
         </div>
