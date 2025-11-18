@@ -6,7 +6,7 @@ interface TextInfoProps {
 
 const TextInfo: React.FC<TextInfoProps> = ({ subHead, title, description }) => {
   return (
-    <section className="flex flex-col items-center gap-8 md:gap-10 lg:gap-12 w-full max-w-[878px] mx-auto px-4">
+    <section className="flex flex-col items-center gap-7 md:gap-8 lg:gap-9 w-full max-w-[878px] mx-auto px-4">
       {/* Sub Head */}
       <div className="flex justify-center items-center px-6 py-2 gap-2 bg-[#DFEDE3] rounded-full w-[168px] h-[42px]">
         <span className="font-manrope font-semibold text-[20px] leading-[26px] text-[#0F4E23]">

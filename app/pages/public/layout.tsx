@@ -7,6 +7,7 @@ import Work from "~/components/pages/home/work";
 
 import HeroSection from "~/components/pages/home/hero-section";
 import Trust from "~/components/pages/home/trusted";
+import Different from "~/components/pages/home/different";
 
 export default function BaseLayout() {
   return (
@@ -18,6 +19,7 @@ export default function BaseLayout() {
       <Trust />
       <AboutCasa />
       <Work />
+      <Different />
     </>
   );
 }
