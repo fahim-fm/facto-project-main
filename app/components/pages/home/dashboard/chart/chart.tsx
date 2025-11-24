@@ -1,78 +1,66 @@
 import React from "react";
+import saleBadge from "~/assets/icon/sale.svg"; // adjust your path
 
-const chartData = [
-  { day: "Sun", height: 68, color: "#E0F0E5" },
-  { day: "Mon", height: 45, color: "#E0F0E5" },
-  { day: "Tue", height: 88, color: "#E0F0E5" },
-  { day: "Wed", height: 71, color: "#E0F0E5" },
-  { day: "Thu", height: 143, color: "#0F4E23" },
-  { day: "Fri", height: 57, color: "#DAFFC2" },
-  { day: "Sat", height: 106, color: "#E0F0E5" },
-];
+type Bar = {
+  day: string;
+  height: string;
+  bg: string;
+};
 
-const SalesChart: React.FC = () => {
+type HighestSale = {
+  day: string;
+  height: string;
+  amount: string;
+};
+
+interface BarChartProps {
+  bars: Bar[];
+  highestSale: HighestSale;
+}
+
+const BarChart: React.FC<BarChartProps> = ({ bars, highestSale }) => {
   return (
-    <div className="relative w-[400px] h-[361px]">
-      {/* Background */}
-      <div className="absolute w-[400px] h-[361px] bg-white rounded-[24px] top-[144px]" />
-
-      {/* Sales Text Info */}
-      <div className="absolute flex items-center gap-4 left-[32.5px] top-[176px]">
-        {/* Icon */}
-        <div className="relative w-[32px] h-[32px]">
-          <div className="absolute bg-[#0F4E23] rounded-full w-[32px] h-[32px]" />
-          <div className="absolute bg-white left-[8px] top-[12px] w-[16px] h-[15px]" />
-        </div>
-
-        {/* Text */}
-        <div className="flex items-center gap-2">
-          <span className="text-[#686868] font-manrope font-medium text-[24px] leading-[36px]">
-            Total sales :
-          </span>
-          <span className="text-[#686868] font-roboto font-bold text-[32px] leading-[40px]">
-            $12,500
-          </span>
-        </div>
-      </div>
-
-      {/* Chart Bars */}
-      <div className="absolute left-[33px] top-[246px]">
-        <div className="flex items-end gap-4 h-[179px]">
-          {chartData.map((item, i) => (
+    <div className="flex justify-center items-end gap-3 mt-6 mb-4 px-6 2xl:mt-[83px] 2xl:mb-[27px]">
+      <div className="flex items-end gap-3 sm:gap-4">
+        {/* Regular Bars */}
+        {bars.map((bar, i) => (
+          <div key={i} className="flex flex-col items-center">
             <div
-              key={i}
-              className="flex flex-col justify-end items-center gap-3"
-              style={{ height: item.height + 36 }}
-            >
-              <div
-                className="w-[34px] rounded-[2px]"
-                style={{ background: item.color, height: item.height }}
-              />
-              <span className="text-[#686868] text-[14px] font-semibold font-roboto leading-[24px] text-center">
-                {item.day}
+              style={{ height: bar.height, background: bar.bg }}
+              className="rounded-t-[2px] w-[22px] sm:w-[28px] 2xl:w-[34px]"
+            />
+            <span className="text-[12px] sm:text-[14px] font-semibold text-[#686868] font-roboto mt-2">
+              {bar.day}
+            </span>
+          </div>
+        ))}
+
+        {/* Highest Sale Bar */}
+        <div className="relative flex flex-col items-center">
+          <div
+            style={{ height: highestSale.height, background: "#0F4E23" }}
+            className="rounded-t-[2px] w-[22px] sm:w-[28px] 2xl:w-[34px]"
+          />
+          <span className="text-[12px] sm:text-[14px] font-semibold text-[#686868] font-roboto mt-2">
+            {highestSale.day}
+          </span>
+
+          {/* Tooltip */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 p-3 rounded-xl flex flex-col gap-2 shadow-md z-10 w-[110px] sm:w-[130px] bg-[#F1F68E] -top-[38px] sm:-top-[45px] 2xl:w-[135px] 2xl:h-[87px] md:-top-[45px] lg:-top-[40px] xl:-top-[40px] 2xl:-top-[74px]">
+            <p className="text-[13px] sm:text-[16px] font-roboto text-[#686868]">
+              Highest sale
+            </p>
+            <div className="flex items-center justify-center gap-2">
+              <img src={saleBadge} alt="Highest sale" className="w-4 h-4" />
+              <span className="text-[16px] sm:text-[20px] font-bold font-roboto text-[#141414]">
+                {highestSale.amount}
               </span>
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Highest Sale Badge */}
-      <div className="absolute left-[173px] top-[246px] bg-[#F1F68E] rounded-[12px] p-[12px_16px] flex flex-col gap-2">
-        <span className="text-[#686868] font-roboto text-[18px]">Highest sale</span>
-
-        <div className="flex items-center gap-2">
-          <div className="relative w-[20px] h-[20px]">
-            <div className="absolute w-[20px] h-[20px] bg-[#F1F68E] rounded-full" />
-            <div className="absolute w-[10px] h-[10px] left-[5px] top-[12px] border-[1.5px] border-[#0F4E23]" />
           </div>
-
-          <span className="font-roboto text-[24px] font-bold text-[#141414] leading-[34px]">
-            $2,450
-          </span>
         </div>
       </div>
     </div>
   );
 };
 
-export default SalesChart;
+export default BarChart;

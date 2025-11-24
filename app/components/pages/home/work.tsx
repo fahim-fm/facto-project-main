@@ -1,13 +1,6 @@
 import TextInfo from "~/components/pages/home/text/textcard";
-import Vectors from "~/assets/icons/Vector.svg";
-import Double from "~/assets/icons/angle-double-right.svg";
-import Maria from "~/assets/icon/img-1.jpg";
-import icon1 from "~/assets/icon/Icon (1).svg";
-import Img1 from "~/assets/icon/img-1.jpg";
-import Img2 from "~/assets/icon/img-2.jpg";
-import Img3 from "~/assets/icon/img-3.jpg";
-import Img4 from "~/assets/icon/img-4.jpg";
-import Img5 from "~/assets/icon/img-5.jpg";
+
+import { Img1,Img2,Img3,Img4,Img5,icon1,Maria,Double,Vectors } from "~/utils/images/other.image";
 const Work: React.FC = () => {
   return (
     <section className="py-[120px]  lg:py-[160px]  bg-[#F8F8F8]">

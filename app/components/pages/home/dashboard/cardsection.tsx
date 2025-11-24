@@ -1,20 +1,8 @@
 import React from "react";
 
 // ✅ Import your images here
-import salesIcon from "~/assets/icon/sales-icon.png";
-import infoIcon from "~/assets/icon/Icon info.svg";
-import saleBadge from "~/assets/icon/sale.svg";
-import averageSale from "~/assets/icon/average-sale.png";
-import icon1 from "~/assets/icon/Icon.svg";
-import dollarIcon from "~/assets/icon/doller.svg";
-import icon2 from "~/assets/icon/Icon (1).svg";
-// import plusIcon from "../assets/img/plus-01.svg";
-import avt from "~/assets/icon/avt.jpg";
-import img1 from "~/assets/icon/img-1.jpg";
-import img2 from "~/assets/icon/img-2.jpg";
-import img3 from "~/assets/icon/img-3.jpg";
-import img4 from "~/assets/icon/img-4.jpg";
-import img5 from "~/assets/icon/img-5.jpg";
+import {salesIcon,infoIcon,saleBadge,averageSale,icon1,dollarIcon,Icon1,Avt,Img1,Img2,Img3,Img4,Img5} 
+from "~/utils/images/other.image";
 
 const CardSection: React.FC = () => {
   return (
@@ -172,7 +160,7 @@ const CardSection: React.FC = () => {
       {/* ✅ Card 3 */}
       <div className="w-[455.25px] h-[665px] flex flex-col p-[46px_24px] rounded-[25px] bg-[#F1F68E]">
         <div className="w-[390.86px] flex gap-[24px]">
-          <img src={icon2} alt="Workflow Icon" className="w-[48px] h-[48px]" />
+          <img src={Icon1} alt="Workflow Icon" className="w-[48px] h-[48px]" />
           <span className="w-[318px] font-roboto font-semibold text-[32px] text-[#141414] flex items-center">
             Secure & Streamlined Workflow
           </span>
@@ -181,7 +169,7 @@ const CardSection: React.FC = () => {
         {/* User Avatars */}
         <div className="flex justify-center mt-[30px]">
           <div className="flex items-center space-x-[-8px]">
-            {[img1, img2, img3, img4, img5].map((src, i) => (
+            {[Img1, Img2, Img3, Img4, Img5].map((src, i) => (
               <img
                 key={i}
                 src={src}
@@ -200,7 +188,7 @@ const CardSection: React.FC = () => {
         {/* Profile Card */}
         <div className="w-[373.23px] h-24 mt-[10px] bg-white rounded-[25px] p-[16px_24px] flex items-center gap-[26px] rotate-[6.36deg]">
           <div className="w-[56px] h-[56px] border-[6px] border-white rounded-full overflow-hidden">
-            <img src={avt} alt="User" className="w-full h-full object-cover" />
+            <img src={Avt} alt="User" className="w-full h-full object-cover" />
           </div>
 
           <div className="flex justify-between w-full">

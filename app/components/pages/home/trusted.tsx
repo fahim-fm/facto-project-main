@@ -1,10 +1,6 @@
 import React from "react";
 
-import cubyn from "~/assets/brand/1.svg";
-import digits from "~/assets/brand/3.svg";
-import bastion from "~/assets/brand/4.svg";
-import pipe from "~/assets/brand/5.svg";
-import ramp from "~/assets/brand/6.svg";
+import{iq,iq3,iq4,iq5,iq6} from "~/utils/images/brand";
 
 interface Company {
   name: string;
@@ -12,11 +8,11 @@ interface Company {
 }
 
 const companies: Company[] = [
-  { name: "Cubyn", logo: cubyn },
-  { name: "Digits", logo: digits },
-  { name: "Bastion", logo: bastion },
-  { name: "Pipe", logo: pipe },
-  { name: "Ramp", logo: ramp },
+  { name: "Cubyn", logo: iq },
+  { name: "Digits", logo: iq3 },
+  { name: "Bastion", logo: iq4 },
+  { name: "Pipe", logo: iq5 },
+  { name: "Ramp", logo: iq6 },
 ];
 
 const Trust: React.FC = () => {
